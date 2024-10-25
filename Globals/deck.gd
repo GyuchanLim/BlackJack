@@ -5,9 +5,6 @@ var rank_to_value: Dictionary
 var card_ranks = ["Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"]
 var suits = ["Spade","Clubs","Diamond","Heart"]
 
-func _ready():
-	var _root = get_tree().root
-
 func prepare_deck() -> void:
 	cards = create_deck(8)
 	cards.shuffle()
