@@ -8,7 +8,7 @@ func _ready() -> void:
 	get_node("dealerControl").hide()
 
 func draw_card() -> Array:
-	return Deck.deck_to_play.pop_back()
+	return Deck.cards.pop_back()
 
 # _on_play_button_pressed functions
 func player_ready() -> void:
