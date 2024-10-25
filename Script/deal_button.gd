@@ -1,27 +1,13 @@
 extends Button
 
 @onready var play = get_node("../../")
-
-func _on_dealer_pressed() -> void:
-	if Score.dealer_total == 0:
-		deal_once()
-	deal_once()
-
-	if Score.dealer_total > 21:
-		play.dealer_bust()
-
-func deal_once() -> void:
-	var dealt_card = play.draw_card()
-
-	Score.add_to_dealer_total(dealt_card)
-	play.display_dealer_cards(Deck.rank_to_value[dealt_card[1]])
+@onready var game_control = get_node("../")
 
 func _on_player_deal_button_pressed() -> void:
-	for y in range(2):
-		var dealt_card = play.draw_card()
+	var dealt_card = Deck.draw_card()
 
-		Score.add_to_player_total(dealt_card)
-		play.display_player_cards(Deck.rank_to_value[dealt_card[1]])
+	Score.add_to_player_total(dealt_card)
+	game_control.player_cards(dealt_card)
 
-	get_node("../dealButton").hide()
-	get_node("../hitButton").show()
+	if Score.player_total > 21:
+		play.player_bust()

@@ -11,3 +11,11 @@ func add_to_dealer_total(card) -> void:
 
 func add_to_player_total(card) -> void:
 	player_total += Deck.get_card_value(card)
+
+func check_score() -> String:
+	if Score.player_total < Score.dealer_total:
+		return "Dealer Win"
+	elif Score.player_total > Score.dealer_total: 
+		return "Player Win"
+	else:
+		return "Push"

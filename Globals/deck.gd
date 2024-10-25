@@ -15,6 +15,9 @@ func prepare_deck() -> void:
 func get_card_value(card) -> int:
 	return rank_to_value[card[1]]
 
+func get_card_rank(card) -> String:
+	return card[1]
+
 func get_card_suit(card) -> String:
 	return card[0]
 
@@ -42,3 +45,6 @@ func create_deck(number_of_decks) -> Array:
 		cards += deck_of_cards
 
 	return cards
+
+func draw_card() -> Array:
+	return cards.pop_back()
