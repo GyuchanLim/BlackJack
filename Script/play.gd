@@ -34,7 +34,6 @@ func reset_game() -> void:
 	get_node("gameControl/stayButton").disabled = false
 	get_node("gameControl/dealButton").disabled = false
 	get_node("gameControl/dealButton").show()
-	get_node("retryButton").hide()
 
 func reset_total() -> void:
 	Score.reset()
