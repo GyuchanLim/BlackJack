@@ -11,16 +11,10 @@ func _ready():
 	dealer_displayed = get_node("dealerCardsDisplayed")
 	dealer_total = get_node("dealerCardTotal")
 
-func player_cards(card) -> void:
+func player_cards() -> void:
 	player_total.text = "Total " + str(Score.player_total)
-	if player_displayed.text == "":
-		player_displayed.text += Deck.get_card_rank(card)
-	else:
-		player_displayed.text += ", " + Deck.get_card_rank(card)
+	player_displayed.text = Score.displayed_player_hand
 
-func dealer_cards(card) -> void:
+func dealer_cards() -> void:
 	dealer_total.text = "Total " + str(Score.dealer_total)
-	if dealer_displayed.text == "":
-		dealer_displayed.text += Deck.get_card_rank(card)
-	else:
-		dealer_displayed.text += ", " + Deck.get_card_rank(card)
+	dealer_displayed.text = Score.displayed_dealer_hand

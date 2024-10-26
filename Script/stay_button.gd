@@ -10,8 +10,8 @@ func _on_player_stay_button_pressed() -> void:
 func deal_dealer() -> void:
 	var dealt_card = Deck.draw_card()
 
-	Score.add_to_dealer_total(dealt_card)
-	game_control.dealer_cards(dealt_card)
+	Score.add_to_dealer_hand(dealt_card)
+	game_control.dealer_cards()
 
 	if Score.dealer_total > 21:
 		play.dealer_bust()

@@ -37,8 +37,7 @@ func reset_game() -> void:
 	get_node("retryButton").hide()
 
 func reset_total() -> void:
-	Score.player_total = 0
-	Score.dealer_total = 0
+	Score.reset()
 	$gameControl/playerCardTotal.text = ""
 	$gameControl/playerCardsDisplayed.text = ""
 	$gameControl/dealerCardTotal.text = ""
