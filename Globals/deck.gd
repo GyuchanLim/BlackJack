@@ -9,39 +9,34 @@ func prepare_deck() -> void:
 	cards = create_deck(8)
 	cards.shuffle()
 
-func get_card_value(card) -> int:
-	return rank_to_value[card[1]]
-
-func get_card_rank(card) -> String:
-	return card[1]
-
-func get_card_suit(card) -> String:
-	return card[0]
-
-func add_card_reference(rank) -> void:
+func get_card_value(rank) -> int:
 	if rank == "Ace":
-		rank_to_value[rank] = 1
+		return 1
 	elif rank == "Jack":
-		rank_to_value[rank] = 10
+		return 10
 	elif rank == "Queen":
-		rank_to_value[rank] = 10
+		return 10
 	elif rank == "King":
-		rank_to_value[rank] = 10
+		return 10
 	else:
-		rank_to_value[rank] = int(rank)
+		return int(rank)
 
 func create_deck(number_of_decks) -> Array:
 	var deck_of_cards: Array
 
 	for rank in card_ranks:
-		add_card_reference(rank)
+		var value = get_card_value(rank)
+
 		for suit in suits:
-			deck_of_cards.append([suit, rank])
+			deck_of_cards.append(card(suit,rank,value))
 
 	for x in number_of_decks:
 		cards += deck_of_cards
 
 	return cards
 
-func draw_card() -> Array:
+func card(suit, rank, value):
+	return { "cardSuit" : suit, "cardRank" : rank, "cardValue" : value }
+
+func draw_card() -> Dictionary:
 	return cards.pop_back()

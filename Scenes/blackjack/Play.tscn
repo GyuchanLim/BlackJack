@@ -1,16 +1,16 @@
 [gd_scene load_steps=9 format=3 uid="uid://358psp32b07m"]
 
-[ext_resource type="Script" path="res://Script/play.gd" id="1_fauyc"]
-[ext_resource type="PackedScene" uid="uid://c8h4e8ckx5kiq" path="res://components/close_button.tscn" id="2_4ln3x"]
-[ext_resource type="Script" path="res://Script/play_button.gd" id="3_2710f"]
-[ext_resource type="Script" path="res://Script/stay_button.gd" id="3_dowah"]
-[ext_resource type="Script" path="res://Script/close_button.gd" id="3_gm73r"]
-[ext_resource type="Script" path="res://Script/retry_button.gd" id="5_buflo"]
-[ext_resource type="Script" path="res://Script/deal_button.gd" id="6_aofg7"]
-[ext_resource type="Script" path="res://Script/game_control.gd" id="6_fhhno"]
+[ext_resource type="Script" path="res://Script/play.gd" id="1_7fqrx"]
+[ext_resource type="PackedScene" uid="uid://c8h4e8ckx5kiq" path="res://components/close_button.tscn" id="2_77tjq"]
+[ext_resource type="Script" path="res://Script/play_button.gd" id="3_csylr"]
+[ext_resource type="Script" path="res://Script/close_button.gd" id="4_spfiu"]
+[ext_resource type="Script" path="res://Script/retry_button.gd" id="5_y2deq"]
+[ext_resource type="Script" path="res://Script/game_control.gd" id="6_82x2d"]
+[ext_resource type="Script" path="res://Script/stay_button.gd" id="7_vl5jv"]
+[ext_resource type="Script" path="res://Script/deal_button.gd" id="8_v7dgb"]
 
 [node name="Play" type="Node2D"]
-script = ExtResource("1_fauyc")
+script = ExtResource("1_7fqrx")
 
 [node name="result" type="Label" parent="."]
 offset_left = 400.0
@@ -19,54 +19,54 @@ offset_right = 742.0
 offset_bottom = 403.0
 theme_override_font_sizes/font_size = 61
 
-[node name="playButton" parent="." instance=ExtResource("2_4ln3x")]
+[node name="playButton" parent="." instance=ExtResource("2_77tjq")]
 offset_left = 475.0
 offset_top = 450.0
 offset_right = 675.0
 offset_bottom = 550.0
 text = "Play"
-script = ExtResource("3_2710f")
+script = ExtResource("3_csylr")
 
-[node name="Close Button" parent="." instance=ExtResource("2_4ln3x")]
+[node name="Close Button" parent="." instance=ExtResource("2_77tjq")]
 offset_left = 1050.0
 offset_top = 50.0
 offset_right = 1100.0
 offset_bottom = 100.0
-script = ExtResource("3_gm73r")
+script = ExtResource("4_spfiu")
 
-[node name="retryButton" parent="." instance=ExtResource("2_4ln3x")]
+[node name="retryButton" parent="." instance=ExtResource("2_77tjq")]
 offset_left = 475.0
 offset_top = 450.0
 offset_right = 675.0
 offset_bottom = 550.0
 text = "Retry?
 "
-script = ExtResource("5_buflo")
+script = ExtResource("5_y2deq")
 
 [node name="gameControl" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("6_fhhno")
+script = ExtResource("6_82x2d")
 
-[node name="stayButton" parent="gameControl" instance=ExtResource("2_4ln3x")]
+[node name="stayButton" parent="gameControl" instance=ExtResource("2_77tjq")]
 layout_mode = 0
 offset_left = 225.0
 offset_top = 475.0
 offset_right = 325.0
 offset_bottom = 575.0
 text = "Stay"
-script = ExtResource("3_dowah")
+script = ExtResource("7_vl5jv")
 
-[node name="dealButton" parent="gameControl" instance=ExtResource("2_4ln3x")]
+[node name="dealButton" parent="gameControl" instance=ExtResource("2_77tjq")]
 layout_mode = 0
 offset_left = 75.0
 offset_top = 475.0
 offset_right = 175.0
 offset_bottom = 575.0
 text = "Deal"
-script = ExtResource("6_aofg7")
+script = ExtResource("8_v7dgb")
 
 [node name="playerCardsDisplayed" type="Label" parent="gameControl"]
 layout_mode = 0
