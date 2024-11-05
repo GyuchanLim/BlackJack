@@ -12,9 +12,9 @@ func _ready():
 	dealer_total = get_node("dealerCardTotal")
 
 func player_cards() -> void:
-	player_total.text = "Total " + str(Score.player_total())
+	player_total.text = "Total " + str(Score.player_total)
 	player_displayed.text = Score.displayed_player_hand
 
 func dealer_cards() -> void:
-	dealer_total.text = "Total " + str(Score.dealer_total())
+	dealer_total.text = "Total " + str(Score.dealer_total)
 	dealer_displayed.text = Score.displayed_dealer_hand

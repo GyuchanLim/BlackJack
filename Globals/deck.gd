@@ -11,7 +11,7 @@ func prepare_deck() -> void:
 
 func get_card_value(rank) -> int:
 	if rank == "Ace":
-		return 1
+		return 11
 	elif rank == "Jack":
 		return 10
 	elif rank == "Queen":
