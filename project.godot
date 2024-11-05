@@ -20,6 +20,10 @@ config/icon="res://Images/icon.svg"
 Deck="*res://Globals/deck.gd"
 Score="*res://Globals/score.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"

@@ -9,5 +9,5 @@ func _on_player_deal_button_pressed() -> void:
 	Score.add_to_player_hand(dealt_card)
 	game_control.player_cards()
 
-	if Score.player_total > 21:
+	if Score.player_total() > 21:
 		play.player_bust()

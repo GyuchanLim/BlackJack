@@ -2,14 +2,26 @@ extends Node
 
 var dealer_hand: Array
 var player_hand: Array
-var player_total: int
-var dealer_total: int
 var displayed_dealer_hand: String
 var displayed_player_hand: String
 
+func dealer_total() -> int:
+	var total = 0
+	for card in dealer_hand:
+		total += card["cardValue"]
+	return total
+
+func player_total() -> int:
+	var total = 0
+	for card in player_hand:
+		total += card["cardValue"]
+	return total
+
 func add_to_dealer_hand(card) -> void:
 	dealer_hand.append(card)
-	dealer_total += card["cardValue"]
+	
+	if card["cardRank"] == "Ace":
+		print("This is a ace")
 	if displayed_dealer_hand == "":
 		displayed_dealer_hand += card["cardRank"]
 	else:
@@ -17,16 +29,15 @@ func add_to_dealer_hand(card) -> void:
 
 func add_to_player_hand(card) -> void:
 	player_hand.append(card)
-	player_total += card["cardValue"]
 	if displayed_player_hand == "":
 		displayed_player_hand += card["cardRank"]
 	else:
 		displayed_player_hand += ', ' + card["cardRank"]
 
 func check_score() -> String:
-	if player_total < dealer_total:
+	if player_total() < dealer_total():
 		return "Dealer Win"
-	elif player_total > dealer_total: 
+	elif player_total() > dealer_total(): 
 		return "Player Win"
 	else:
 		return "Push"
@@ -34,7 +45,5 @@ func check_score() -> String:
 func reset() -> void:
 	dealer_hand.clear()
 	player_hand.clear()
-	player_total = 0
-	dealer_total = 0
 	displayed_dealer_hand = ""
 	displayed_player_hand = ""
