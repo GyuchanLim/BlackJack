@@ -12,7 +12,11 @@ func _ready():
 	dealer_total = get_node("dealerCardTotal")
 
 func player_cards() -> void:
-	player_total.text = "Total " + str(Score.player_total)
+	if Score.dealer["hasAce"] == true:
+		player_total.text = "Total " + str(Score.player_total - 10) + " or " + str(str(Score.player_total))
+	else:
+		player_total.text = "Total " + str(Score.player_total)
+
 	player_displayed.text = Score.displayed_player_hand
 
 func dealer_cards() -> void:

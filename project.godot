@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BlackJack"
-run/main_scene="res://Scenes/Play.tscn"
+run/main_scene="res://Scenes/blackjack/Play.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Images/icon.svg"
 
@@ -19,6 +19,10 @@ config/icon="res://Images/icon.svg"
 
 Deck="*res://Globals/deck.gd"
 Score="*res://Globals/score.gd"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [editor]
 

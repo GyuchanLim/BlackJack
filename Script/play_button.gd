@@ -10,12 +10,12 @@ func _on_pressed() -> void:
 
 func deal_player() -> void:
 	var dealt_card = Deck.draw_card()
-	Score.add_to_player_hand(dealt_card)
+	Score.add_card_to_player_hand(dealt_card)
 	game_control.player_cards()
 
 func deal_dealer() -> void:
 	var dealt_card = Deck.draw_card()
-	Score.add_to_dealer_hand(dealt_card)
+	Score.add_card_to_dealer_hand(dealt_card)
 	game_control.dealer_cards()
 
 func deal_game() -> void:
